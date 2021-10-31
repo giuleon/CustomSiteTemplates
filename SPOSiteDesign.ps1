@@ -2,7 +2,7 @@ $TenantName = "giuleon"
 Connect-SPOService -Url https://$TenantName-admin.sharepoint.com
 
 Get-SPOSiteDesign c765f79a-2bcf-4eec-923d-0b874ec57453
-Set-SPOSiteDesign -Identity c765f79a-2bcf-4eec-923d-0b874ec57453 -ThumbnailUrl "" -PreviewImageUrl ""
+Set-SPOSiteDesign -Identity c765f79a-2bcf-4eec-923d-0b874ec57453 -ThumbnailUrl "https://raw.githubusercontent.com/giuleon/CustomSiteTemplates/main/assets/ContosoPreview1.png" -PreviewImageUrl "https://raw.githubusercontent.com/giuleon/CustomSiteTemplates/main/assets/ContosoPreview1.png"
 
 
 #$script = Get-Clipboard -Raw
@@ -78,6 +78,21 @@ $script = @"
           "url": "SitePages/About-Us.aspx",
           "displayName": "About Us",
           "isWebRelative": true
+      },
+      {
+        "verb": "removeNavLink",
+        "displayName": "Pages",
+        "isWebRelative": true
+      },
+      {
+        "verb": "removeNavLink",
+        "displayName": "Documents",
+        "isWebRelative": true
+      },
+      {
+        "verb": "removeNavLink",
+        "displayName": "Site contents",
+        "isWebRelative": true
       }
   ]
 }
