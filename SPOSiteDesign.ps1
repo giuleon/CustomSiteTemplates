@@ -1,10 +1,6 @@
 $TenantName = "giuleon"
 Connect-SPOService -Url https://$TenantName-admin.sharepoint.com
 
-Get-SPOSiteDesign c765f79a-2bcf-4eec-923d-0b874ec57453
-Set-SPOSiteDesign -Identity c765f79a-2bcf-4eec-923d-0b874ec57453 -ThumbnailUrl "https://raw.githubusercontent.com/giuleon/CustomSiteTemplates/main/assets/ContosoPreview1.png" -PreviewImageUrl "https://raw.githubusercontent.com/giuleon/CustomSiteTemplates/main/assets/ContosoPreview1.png"
-
-
 #$script = Get-Clipboard -Raw
 $script = @"
 {
@@ -21,7 +17,7 @@ $script = @"
       },
       {
           "verb": "applyTheme",
-          "themeName": "Blue Yonder"
+          "themeName": "Orange"
       },
       {
           "verb": "createSPList",
@@ -98,16 +94,20 @@ $script = @"
 }
 "@
 
-#Creating a new Site Script
+#Creating a new Site Script & Site Design
 Add-SPOSiteScript -Title "Site Script to provision Site Template Contoso" -Content $script
-
-#Updating an existing one
-Get-SPOSiteScript 9823d5c9-e8d5-49e1-aa23-6bebea62b82c
-Set-SPOSiteScript -Identity 9823d5c9-e8d5-49e1-aa23-6bebea62b82c -Content $script
-
 Add-SPOSiteDesign `
   -Title "Record site creation" `
   -Description "The creation of this site will be recorded in the site directory list" `
   -SiteScripts 9832d5c9-e8d5-49e1-aa23-6bebea62b82c `
   -WebTemplate "68"
+
+#Updating an existing one
+Get-SPOSiteDesign c765f79a-2bcf-4eec-923d-0b874ec57453
+Set-SPOSiteDesign -Identity c765f79a-2bcf-4eec-923d-0b874ec57453 -ThumbnailUrl "https://raw.githubusercontent.com/giuleon/CustomSiteTemplates/main/assets/ContosoPreview1.png" -PreviewImageUrl "https://raw.githubusercontent.com/giuleon/CustomSiteTemplates/main/assets/ContosoPreview1.png"
+
+Get-SPOSiteScript 9823d5c9-e8d5-49e1-aa23-6bebea62b82c
+Set-SPOSiteScript -Identity 9823d5c9-e8d5-49e1-aa23-6bebea62b82c -Content $script
+
+
 
