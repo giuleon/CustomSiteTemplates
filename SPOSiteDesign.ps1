@@ -23,8 +23,6 @@ Set-SPOSiteDesign -Identity c765f79a-2bcf-4eec-923d-0b874ec57453 `
     -ThumbnailUrl $ThumbnailUrl `
     -PreviewImageUrl $PreviewImageUrl
 
-Get-SPOSiteScript 9823d5c9-e8d5-49e1-aa23-6bebea62b82c
-Set-SPOSiteScript -Identity 9823d5c9-e8d5-49e1-aa23-6bebea62b82c -Content $script
-
-
+Get-SPOSiteScript $SiteScript.Id
+Set-SPOSiteScript -Identity $SiteScript.Id -Content $SiteScriptJsonContent
 
