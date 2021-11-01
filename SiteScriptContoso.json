@@ -3,7 +3,7 @@
     "actions": [
         {
             "verb": "triggerFlow",
-            "url": "https://prod-101.westeurope.logic.azure.com:443/workflows/2be8a42d53b34d15b80b8209f87423f4/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=xGwA_g2ff_WSYIQJ91Q-YOCnu6XdOKvF_zAX2D0wG-E",
+            "url": "https://prod-101.westeurope.logic.azure.com:443/workflows/2be8a42d53b34d15b80b8209f87423f4/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=xGwA_g2ff_WSYIQJ91Q",
             "name": "Record site creation event",
             "parameters": {
                 "event": "site creation",
