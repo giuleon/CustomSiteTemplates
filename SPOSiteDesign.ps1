@@ -16,10 +16,12 @@ Add-SPOSiteDesign `
   -Description $Description `
   -SiteScripts $SiteScript.Id `
   -WebTemplate $WebTemplate
+  -ThumbnailUrl $ThumbnailUrl `
+  -PreviewImageUrl $PreviewImageUrl
 
 #Updating an existing one
 Get-SPOSiteDesign c765f79a-2bcf-4eec-923d-0b874ec57453
-Set-SPOSiteDesign -Identity c765f79a-2bcf-4eec-923d-0b874ec57453 `
+Set-SPOSiteDesign -Identity 00f3961a-92f8-4fd2-bef8-20b59f23b5ef `
     -ThumbnailUrl $ThumbnailUrl `
     -PreviewImageUrl $PreviewImageUrl
 
